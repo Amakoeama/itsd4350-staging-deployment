@@ -44,3 +44,19 @@ jobs:
 
       - name: Confirm successful build
         run: echo 'Application build and tests completed successfully.'
+
+      - name: Package application for deployment
+        run: |
+          mkdir -p dist
+          tar -czf dist/staging-app.tar.gz \
+            app.py \
+            requirements.txt \
+            src
+
+      - name: Upload deployment artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: staging-application
+          path: dist/staging-app.tar.gz
+          if-no-files-found: error
+          retention-days: 7
