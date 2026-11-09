@@ -2,3 +2,17 @@
 __pycache__/
 .pytest_cache/
 *.pyc
+
+#--- Terraform local files ---
+**/.terraform/
+**/*.tfstate
+**/*.tfstate.*
+**/*.tfplan
+**/crash.log
+**/crash.*.log
+**/*.tfvars
+!**/*.tfvars.example
+
+#--- Local Terraform logs ---
+**/terraform_init_log.txt
+**/terraform_validate_log.txt
