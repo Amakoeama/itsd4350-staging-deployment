@@ -1,0 +1,5 @@
+=== BLUE/GREEN TRAFFIC SWITCH TEST ===
+Successful requests: 546
+Failed requests: 0
+Blue responses: 0
+Green responses: 546

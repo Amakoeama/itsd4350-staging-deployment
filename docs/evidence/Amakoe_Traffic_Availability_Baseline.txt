@@ -1,0 +1,5 @@
+Total requests: 549
+Successful requests: 549
+Failed requests: 0
+Blue responses: 549
+Green responses: 0

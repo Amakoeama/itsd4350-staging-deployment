@@ -1,0 +1,18 @@
+=== BLUE/GREEN CONTAINER STATUS ===
+NAME             IMAGE                  COMMAND                  SERVICE   CREATED          STATUS          PORTS
+itsd4350-blue    itsd4350-flask:blue    "gunicorn --bind 0.0…"   blue      2 hours ago      Up 2 hours      8000/tcp
+itsd4350-green   itsd4350-flask:green   "gunicorn --bind 0.0…"   green     57 minutes ago   Up 57 minutes   8000/tcp
+itsd4350-nginx   nginx:stable-alpine    "/docker-entrypoint.…"   nginx     2 hours ago      Up 2 hours      127.0.0.1:8080->80/tcp
+
+=== PRODUCTION HEALTH CHECK ===
+HTTP/1.1 200 OK
+Server: nginx/1.30.6
+Date: Sun, 15 Nov 2026 09:23:55 GMT
+Content-Type: application/json
+Content-Length: 112
+Connection: keep-alive
+
+{"application":"ITSD-4350 Mini Project 2.1","environment":"production-blue","status":"healthy","version":"1.0"}
+
+=== ACTIVE NGINX BACKEND ===
+    server blue:8000;

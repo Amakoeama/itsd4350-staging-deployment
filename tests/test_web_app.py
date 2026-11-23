@@ -10,5 +10,5 @@ def test_homepage_status():
 def test_homepage_content():
     client = app.test_client()
     response = client.get("/")
-    assert b"CI/CD Calculator Application" in response.data
+    assert b"ITSD-4350 Automated Deployment Pipeline" in response.data
     assert b"Application Running Successfully" in response.data
