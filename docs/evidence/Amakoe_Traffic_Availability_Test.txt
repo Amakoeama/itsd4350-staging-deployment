@@ -1,0 +1,6 @@
+=== BLUE/GREEN TRAFFIC SWITCH AVAILABILITY TEST ===
+Blue responses: 1151
+Green responses: 94
+Failed requests: 0
+Total requests: 1245
+Transition observed: True

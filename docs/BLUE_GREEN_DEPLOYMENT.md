@@ -60,4 +60,28 @@ Production was successfully promoted from Blue version 1.0 to Green version 2.0 
 
 The implementation demonstrates Blue/Green deployment using Docker Compose, NGINX, health validation, controlled production promotion, and rollback.
 
-All reported functional tests passed in the local Docker environment. Zero downtime was not independently measured.
+All reported functional tests passed in the local Docker environment. A monitored Blue-to-Green transition recorded zero failed requests.
+
+
+## Final Traffic Availability Validation
+
+The final monitored production transition recorded:
+
+- Blue responses: 1,151
+- Green responses: 94
+- Failed requests: 0
+- Total requests: 1,245
+- Observed request success rate: 100%
+- Transition observed: True
+
+This demonstrates no failed requests during the sampled
+Blue-to-Green transition. It does not guarantee that
+every possible client request experienced zero interruption.
+
+Evidence: docs/evidence/Amakoe_Traffic_Availability_Test.txt
+
+Screenshot:
+docs/evidence/screenshots/Amakoe_06_Blue_Green_Zero_Downtime_Test.png
+
+Emergency rollback instructions:
+docs/EMERGENCY_ROLLBACK.md
