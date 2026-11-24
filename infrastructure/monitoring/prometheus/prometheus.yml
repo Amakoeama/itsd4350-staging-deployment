@@ -1,0 +1,26 @@
+# Mini Project 2.4 - Prometheus Monitoring Configuration
+
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  # Monitor Prometheus itself.
+  - job_name: prometheus
+    static_configs:
+      - targets:
+          - "localhost:9090"
+
+  # Monitor both Blue and Green Flask applications.
+  - job_name: flask-blue-green
+    metrics_path: /metrics
+    static_configs:
+      - targets:
+          - "blue:8000"
+        labels:
+          environment: blue
+
+      - targets:
+          - "green:8000"
+        labels:
+          environment: green
